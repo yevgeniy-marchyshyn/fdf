@@ -103,6 +103,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fdf1.dir/put_pixel.c.o"
   "CMakeFiles/fdf1.dir/define_offset.c.o"
   "CMakeFiles/fdf1.dir/apply_multiplier.c.o"
+  "CMakeFiles/fdf1.dir/line_bresenham.c.o"
   "fdf1.pdb"
   "fdf1"
 )

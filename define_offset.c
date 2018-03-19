@@ -18,16 +18,6 @@ void			define_offset(t_fdf *data)
 	int 	y;
 
 	y = 0;
-//	data->x_max_multiplied = 0;
-//	data->y_max_multiplied = 0;
-//	while (i < data->last)
-//	{
-//		if (data->x_max_multiplied < data->map[i].x)
-//			data->x_max_multiplied = data->map[i].x;
-//		if (data->y_max_multiplied < data->map[i].y)
-//			data->y_max_multiplied = data->map[i].y;
-//		i++;
-//	}
 	data->offset_x = (WINDOW_W / 2) - ((data->nx * data->multiplier) / 2);
 	data->offset_y = (WINDOW_H / 2) - ((data->ny * data->multiplier) / 2);
 	while (y < data->ny)
@@ -37,14 +27,10 @@ void			define_offset(t_fdf *data)
 		{
 			data->map[y][x].x += data->offset_x;
 			data->map[y][x].y += data->offset_y;
+			data->map_origin[y][x].x += data->offset_x;
+			data->map_origin[y][x].y += data->offset_y;
 			x++;
 		}
 		y++;
 	}
-//	while (i < data->nx * data->ny)
-//	{
-//		data->map[i].x += data->offset_x;
-//		data->map[i].y += data->offset_y;
-//		i++;
-//	}
 }

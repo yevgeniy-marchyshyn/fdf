@@ -712,6 +712,14 @@ CMakeFiles/fdf1.dir/libft/get_next_line.c.o: ../libft/./libft.h
 CMakeFiles/fdf1.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
 CMakeFiles/fdf1.dir/libft/get_next_line.c.o: ../libft/get_next_line.h
 
+CMakeFiles/fdf1.dir/line_bresenham.c.o: .././libft/././libft.h
+CMakeFiles/fdf1.dir/line_bresenham.c.o: .././libft/./ft_printf/ft_printf.h
+CMakeFiles/fdf1.dir/line_bresenham.c.o: .././libft/./get_next_line.h
+CMakeFiles/fdf1.dir/line_bresenham.c.o: .././libft/./libft.h
+CMakeFiles/fdf1.dir/line_bresenham.c.o: .././libft/libft.h
+CMakeFiles/fdf1.dir/line_bresenham.c.o: ../fdf.h
+CMakeFiles/fdf1.dir/line_bresenham.c.o: ../line_bresenham.c
+
 CMakeFiles/fdf1.dir/main.c.o: .././libft/././libft.h
 CMakeFiles/fdf1.dir/main.c.o: .././libft/./ft_printf/ft_printf.h
 CMakeFiles/fdf1.dir/main.c.o: .././libft/./get_next_line.h

@@ -30,6 +30,8 @@ void			apply_multiplier(t_fdf *data)
 		{
 			data->map[y][x].x *= (int)data->multiplier;
 			data->map[y][x].y *= (int)data->multiplier;
+			data->map_origin[y][x].x *= (int)data->multiplier;
+			data->map_origin[y][x].y *= (int)data->multiplier;
 			x++;
 		}
 		y++;

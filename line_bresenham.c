@@ -12,19 +12,19 @@
 
 #include "fdf.h"
 
-static void		copy(t_fdf *data, t_bresenham *l, int p0, int p1)
+static void		copy(t_bresenham *l, t_coordinates *p0, t_coordinates *p1)
 {
-	l->x[0] = (int)data->map[p0].x;
-	l->x[1] = (int)data->map[p1].x;
-	l->y[0] = (int)data->map[p0].y;
-	l->y[1] = (int)data->map[p1].y;
+	l->x[0] = (int)p0->x;
+	l->x[1] = (int)p1->x;
+	l->y[0] = (int)p0->y;
+	l->y[1] = (int)p1->y;
 }
 
-void			line_bresenham(int p0, int p1, t_fdf *data)
+void			line_bresenham(t_coordinates p0, t_coordinates p1, t_fdf *d)
 {
 	t_bresenham		line;
 
-	copy(data, &line, p0, p1);
+	copy(&line, &p0, &p1);
 	line.d[0] = abs(line.x[1] - line.x[0]);
 	line.s[0] = line.x[0] < line.x[1] ? 1 : -1;
 	line.d[1] = abs(line.y[1] - line.y[0]);
@@ -32,7 +32,7 @@ void			line_bresenham(int p0, int p1, t_fdf *data)
 	line.err = (line.d[0] > line.d[1] ? line.d[0] : -line.d[1]) / 2;
 	while (1)
 	{
-		put_pixel(line.x[0], line.y[0], data);
+		put_pixel(line.x[0], line.y[0], d);
 		if (line.x[0] == line.x[1] && line.y[0] == line.y[1])
 			break ;
 		line.e2 = line.err;

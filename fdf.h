@@ -73,8 +73,6 @@ typedef struct					s_fdf
 	int							endian;
 	int							color;
 	double						multiplier;
-	double						x_max;
-	double						y_max;
 	double						offset_x;
 	double						offset_y;
 	int							angle_x;
@@ -89,8 +87,9 @@ int					manage_control_keys(int key, t_fdf *data);
 void				draw_map(t_fdf *data);
 int					click_x(t_fdf *data);
 void				put_pixel(double x, double y, t_fdf *data);
-void				line_bresenham(int p0, int p1, t_fdf *data);
+void				line_bresenham(t_coordinates p0, t_coordinates p2, t_fdf *d);
 void				apply_multiplier(t_fdf *data);
-void				define_offset(t_fdf *data);
+void				set_offset(t_fdf *data);
+void				map_rotation(t_fdf *data);
 
 #endif

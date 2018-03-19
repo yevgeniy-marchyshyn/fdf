@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.9)
-project(fdf1)
+project(newfdf)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -lmlx -framework OpenGL -framework AppKit")
 
-add_executable(fdf1
+add_executable(newfdf
         libft/ft_printf/active_bits.c
         libft/ft_printf/annulation.c
         libft/ft_printf/check_flags_modif.c
@@ -103,12 +103,14 @@ add_executable(fdf1
         libft/get_next_line.c
         libft/get_next_line.h
         libft/libft.h
+        apply_multiplier.c
         click_x.c
+        define_offset.c
         draw_map.c
         fdf.h
         fdf_error.c
+        line_bresenham.c
         main.c
         manage_control_keys.c
         put_pixel.c
-        define_offset.c
-        apply_multiplier.c)
+        )

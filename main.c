@@ -88,12 +88,16 @@ static void			parse_z(t_fdf *data, char *fat_line)
 	while (y < data->ny)
 	{
 		x = 0;
-		n = ft_strsplit(l[y], SPACE);
+		if (!(n = ft_strsplit(l[y], SPACE)))
+			fdf_error(5);
 		while (x < data->nx)
 		{
 			data->map[y][x].y = (double)y;
 			data->map[y][x].x = (double)x;
 			data->map[y][x].z = (double)ft_atoi(n[x]);
+			data->map_origin[y][x].y = (double)y;
+			data->map_origin[y][x].x = (double)x;
+			data->map_origin[y][x].z = (double)ft_atoi(n[x]);
 			x++;
 		}
 		free(n);
@@ -114,7 +118,7 @@ static void 		get_coordinates(t_fdf *data, char *fat_line)
 	while (i < data->ny)
 	{
 		data->map[i] = (t_coordinates *)malloc(sizeof(t_coordinates) * (int)data->nx);
-		data->map_origin[i++] = (t_coordinates *)malloc(sizeof(t_coordinates) * (int)data->nx);
+		data->map_origin[i++] = (t_coordinates *)malloc(sizeof(t_coordinates) * (int)data->nx + 1);
 	}
 	parse_z(data, fat_line);
 }
@@ -168,10 +172,15 @@ int					main(int argc, char **argv)
 	if (!(data.mlx_window = mlx_new_window(data.mlx_ptr,\
 					WINDOW_W, WINDOW_H, "Fils de fer (FDF)")))
 		fdf_error(3);
+	parse_map(argv[1], &data);
+	data.angle_x = 0;
+	data.angle_y = 0;
+	data.angle_z = 0;
+	apply_multiplier(&data);
+	set_offset(&data);
+	draw_map(&data);
 	mlx_hook(data.mlx_window, 2, 5, manage_control_keys, &data);
 	mlx_hook(data.mlx_window, 17, 1L<<17, click_x, &data);
-	parse_map(argv[1], &data);
-	draw_map(&data);
 	mlx_loop(data.mlx_ptr);
 	return (0);
 }
