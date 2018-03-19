@@ -18,8 +18,10 @@ void			set_offset(t_fdf *data)
 	int 	y;
 
 	y = 0;
-	data->offset_x = (WINDOW_W / 2) - ((data->nx * data->multiplier) / 2);
-	data->offset_y = (WINDOW_H / 2) - ((data->ny * data->multiplier) / 2);
+	data->offset_x = (WINDOW_W / 2);
+	data->offset_y = (WINDOW_H / 2);
+//	data->offset_x = (WINDOW_W / 2) - ((data->nx * data->multiplier) / 2);
+//	data->offset_y = (WINDOW_H / 2) - ((data->ny * data->multiplier) / 2);
 	while (y < data->ny)
 	{
 		x = 0;

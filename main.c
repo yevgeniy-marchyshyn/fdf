@@ -92,11 +92,11 @@ static void			parse_z(t_fdf *data, char *fat_line)
 			fdf_error(5);
 		while (x < data->nx)
 		{
-			data->map[y][x].y = (double)y;
-			data->map[y][x].x = (double)x;
+			data->map[y][x].y = (double)y - (data->ny / 2);
+			data->map[y][x].x = (double)x - (data->nx / 2);
 			data->map[y][x].z = (double)ft_atoi(n[x]);
-			data->map_origin[y][x].y = (double)y;
-			data->map_origin[y][x].x = (double)x;
+			data->map_origin[y][x].y = (double)y - (data->ny / 2);
+			data->map_origin[y][x].x = (double)x - (data->nx / 2);
 			data->map_origin[y][x].z = (double)ft_atoi(n[x]);
 			x++;
 		}
