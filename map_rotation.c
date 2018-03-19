@@ -67,8 +67,8 @@ static void				map_rotation_z(t_fdf *data)
 		x = 0;
 		while (x < data->nx)
 		{
-			data->map[y][x].x = data->map[y][x].x  * cos(radian) - data->map[y][x].y * sin(radian);
-			data->map[y][x].y = data->map[y][x].x * sin(radian) + data->map[y][x].y * cos(radian);
+			data->map[y][x].x = data->map_origin[y][x].x  * cos(radian) - data->map[y][x].y * sin(radian);
+			data->map[y][x].y = data->map_origin[y][x].x * sin(radian) + data->map_origin[y][x].y * cos(radian);
 			x++;
 		}
 		y++;

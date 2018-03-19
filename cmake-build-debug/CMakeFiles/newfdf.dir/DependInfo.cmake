@@ -108,7 +108,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/ymarchys/Documents/newfdf/line_bresenham.c" "/Users/ymarchys/Documents/newfdf/cmake-build-debug/CMakeFiles/newfdf.dir/line_bresenham.c.o"
   "/Users/ymarchys/Documents/newfdf/main.c" "/Users/ymarchys/Documents/newfdf/cmake-build-debug/CMakeFiles/newfdf.dir/main.c.o"
   "/Users/ymarchys/Documents/newfdf/manage_control_keys.c" "/Users/ymarchys/Documents/newfdf/cmake-build-debug/CMakeFiles/newfdf.dir/manage_control_keys.c.o"
+  "/Users/ymarchys/Documents/newfdf/map_rotation.c" "/Users/ymarchys/Documents/newfdf/cmake-build-debug/CMakeFiles/newfdf.dir/map_rotation.c.o"
   "/Users/ymarchys/Documents/newfdf/put_pixel.c" "/Users/ymarchys/Documents/newfdf/cmake-build-debug/CMakeFiles/newfdf.dir/put_pixel.c.o"
+  "/Users/ymarchys/Documents/newfdf/set_offset.c" "/Users/ymarchys/Documents/newfdf/cmake-build-debug/CMakeFiles/newfdf.dir/set_offset.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

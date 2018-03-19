@@ -406,7 +406,13 @@
 		<Unit filename="/Users/ymarchys/Documents/newfdf/manage_control_keys.c">
 			<Option target="newfdf"/>
 		</Unit>
+		<Unit filename="/Users/ymarchys/Documents/newfdf/map_rotation.c">
+			<Option target="newfdf"/>
+		</Unit>
 		<Unit filename="/Users/ymarchys/Documents/newfdf/put_pixel.c">
+			<Option target="newfdf"/>
+		</Unit>
+		<Unit filename="/Users/ymarchys/Documents/newfdf/set_offset.c">
 			<Option target="newfdf"/>
 		</Unit>
 		<Unit filename="/Users/ymarchys/Documents/newfdf/CMakeLists.txt">

@@ -103,7 +103,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/newfdf.dir/line_bresenham.c.o"
   "CMakeFiles/newfdf.dir/main.c.o"
   "CMakeFiles/newfdf.dir/manage_control_keys.c.o"
+  "CMakeFiles/newfdf.dir/map_rotation.c.o"
   "CMakeFiles/newfdf.dir/put_pixel.c.o"
+  "CMakeFiles/newfdf.dir/set_offset.c.o"
   "newfdf.pdb"
   "newfdf"
 )

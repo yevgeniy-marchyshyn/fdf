@@ -57,13 +57,13 @@ int				manage_control_keys(int key, t_fdf *data)
 {
 	if (key == KEY_C)
 		mlx_clear_window(data->mlx_ptr, data->mlx_window);
-	if (key == ARROW_LEFT)
-		data->angle_x += 2;
-	if (key == ARROW_RIGHT)
-		data->angle_x -= 2;
 	if (key == ARROW_UP)
-		data->angle_y += 2;
+		data->angle_x += 2;
 	if (key == ARROW_DOWN)
+		data->angle_x -= 2;
+	if (key == ARROW_LEFT)
+		data->angle_y += 2;
+	if (key == ARROW_RIGHT)
 		data->angle_y -= 2;
 	if (key == 116)
 		data->angle_z += 2;

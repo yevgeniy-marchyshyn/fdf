@@ -2553,9 +2553,33 @@ CMakeFiles/newfdf.dir/manage_control_keys.c.o.provides: CMakeFiles/newfdf.dir/ma
 CMakeFiles/newfdf.dir/manage_control_keys.c.o.provides.build: CMakeFiles/newfdf.dir/manage_control_keys.c.o
 
 
+CMakeFiles/newfdf.dir/map_rotation.c.o: CMakeFiles/newfdf.dir/flags.make
+CMakeFiles/newfdf.dir/map_rotation.c.o: ../map_rotation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ymarchys/Documents/newfdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/newfdf.dir/map_rotation.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/newfdf.dir/map_rotation.c.o   -c /Users/ymarchys/Documents/newfdf/map_rotation.c
+
+CMakeFiles/newfdf.dir/map_rotation.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/newfdf.dir/map_rotation.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ymarchys/Documents/newfdf/map_rotation.c > CMakeFiles/newfdf.dir/map_rotation.c.i
+
+CMakeFiles/newfdf.dir/map_rotation.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/newfdf.dir/map_rotation.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ymarchys/Documents/newfdf/map_rotation.c -o CMakeFiles/newfdf.dir/map_rotation.c.s
+
+CMakeFiles/newfdf.dir/map_rotation.c.o.requires:
+
+.PHONY : CMakeFiles/newfdf.dir/map_rotation.c.o.requires
+
+CMakeFiles/newfdf.dir/map_rotation.c.o.provides: CMakeFiles/newfdf.dir/map_rotation.c.o.requires
+	$(MAKE) -f CMakeFiles/newfdf.dir/build.make CMakeFiles/newfdf.dir/map_rotation.c.o.provides.build
+.PHONY : CMakeFiles/newfdf.dir/map_rotation.c.o.provides
+
+CMakeFiles/newfdf.dir/map_rotation.c.o.provides.build: CMakeFiles/newfdf.dir/map_rotation.c.o
+
+
 CMakeFiles/newfdf.dir/put_pixel.c.o: CMakeFiles/newfdf.dir/flags.make
 CMakeFiles/newfdf.dir/put_pixel.c.o: ../put_pixel.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ymarchys/Documents/newfdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/newfdf.dir/put_pixel.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ymarchys/Documents/newfdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/newfdf.dir/put_pixel.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/newfdf.dir/put_pixel.c.o   -c /Users/ymarchys/Documents/newfdf/put_pixel.c
 
 CMakeFiles/newfdf.dir/put_pixel.c.i: cmake_force
@@ -2575,6 +2599,30 @@ CMakeFiles/newfdf.dir/put_pixel.c.o.provides: CMakeFiles/newfdf.dir/put_pixel.c.
 .PHONY : CMakeFiles/newfdf.dir/put_pixel.c.o.provides
 
 CMakeFiles/newfdf.dir/put_pixel.c.o.provides.build: CMakeFiles/newfdf.dir/put_pixel.c.o
+
+
+CMakeFiles/newfdf.dir/set_offset.c.o: CMakeFiles/newfdf.dir/flags.make
+CMakeFiles/newfdf.dir/set_offset.c.o: ../set_offset.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ymarchys/Documents/newfdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/newfdf.dir/set_offset.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/newfdf.dir/set_offset.c.o   -c /Users/ymarchys/Documents/newfdf/set_offset.c
+
+CMakeFiles/newfdf.dir/set_offset.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/newfdf.dir/set_offset.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ymarchys/Documents/newfdf/set_offset.c > CMakeFiles/newfdf.dir/set_offset.c.i
+
+CMakeFiles/newfdf.dir/set_offset.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/newfdf.dir/set_offset.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ymarchys/Documents/newfdf/set_offset.c -o CMakeFiles/newfdf.dir/set_offset.c.s
+
+CMakeFiles/newfdf.dir/set_offset.c.o.requires:
+
+.PHONY : CMakeFiles/newfdf.dir/set_offset.c.o.requires
+
+CMakeFiles/newfdf.dir/set_offset.c.o.provides: CMakeFiles/newfdf.dir/set_offset.c.o.requires
+	$(MAKE) -f CMakeFiles/newfdf.dir/build.make CMakeFiles/newfdf.dir/set_offset.c.o.provides.build
+.PHONY : CMakeFiles/newfdf.dir/set_offset.c.o.provides
+
+CMakeFiles/newfdf.dir/set_offset.c.o.provides.build: CMakeFiles/newfdf.dir/set_offset.c.o
 
 
 # Object files for target newfdf
@@ -2683,7 +2731,9 @@ newfdf_OBJECTS = \
 "CMakeFiles/newfdf.dir/line_bresenham.c.o" \
 "CMakeFiles/newfdf.dir/main.c.o" \
 "CMakeFiles/newfdf.dir/manage_control_keys.c.o" \
-"CMakeFiles/newfdf.dir/put_pixel.c.o"
+"CMakeFiles/newfdf.dir/map_rotation.c.o" \
+"CMakeFiles/newfdf.dir/put_pixel.c.o" \
+"CMakeFiles/newfdf.dir/set_offset.c.o"
 
 # External object files for target newfdf
 newfdf_EXTERNAL_OBJECTS =
@@ -2792,10 +2842,12 @@ newfdf: CMakeFiles/newfdf.dir/fdf_error.c.o
 newfdf: CMakeFiles/newfdf.dir/line_bresenham.c.o
 newfdf: CMakeFiles/newfdf.dir/main.c.o
 newfdf: CMakeFiles/newfdf.dir/manage_control_keys.c.o
+newfdf: CMakeFiles/newfdf.dir/map_rotation.c.o
 newfdf: CMakeFiles/newfdf.dir/put_pixel.c.o
+newfdf: CMakeFiles/newfdf.dir/set_offset.c.o
 newfdf: CMakeFiles/newfdf.dir/build.make
 newfdf: CMakeFiles/newfdf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ymarchys/Documents/newfdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Linking C executable newfdf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ymarchys/Documents/newfdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Linking C executable newfdf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/newfdf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -2907,7 +2959,9 @@ CMakeFiles/newfdf.dir/requires: CMakeFiles/newfdf.dir/fdf_error.c.o.requires
 CMakeFiles/newfdf.dir/requires: CMakeFiles/newfdf.dir/line_bresenham.c.o.requires
 CMakeFiles/newfdf.dir/requires: CMakeFiles/newfdf.dir/main.c.o.requires
 CMakeFiles/newfdf.dir/requires: CMakeFiles/newfdf.dir/manage_control_keys.c.o.requires
+CMakeFiles/newfdf.dir/requires: CMakeFiles/newfdf.dir/map_rotation.c.o.requires
 CMakeFiles/newfdf.dir/requires: CMakeFiles/newfdf.dir/put_pixel.c.o.requires
+CMakeFiles/newfdf.dir/requires: CMakeFiles/newfdf.dir/set_offset.c.o.requires
 
 .PHONY : CMakeFiles/newfdf.dir/requires
 

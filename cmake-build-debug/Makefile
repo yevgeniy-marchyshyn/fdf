@@ -2931,6 +2931,33 @@ manage_control_keys.c.s:
 	$(MAKE) -f CMakeFiles/newfdf.dir/build.make CMakeFiles/newfdf.dir/manage_control_keys.c.s
 .PHONY : manage_control_keys.c.s
 
+map_rotation.o: map_rotation.c.o
+
+.PHONY : map_rotation.o
+
+# target to build an object file
+map_rotation.c.o:
+	$(MAKE) -f CMakeFiles/newfdf.dir/build.make CMakeFiles/newfdf.dir/map_rotation.c.o
+.PHONY : map_rotation.c.o
+
+map_rotation.i: map_rotation.c.i
+
+.PHONY : map_rotation.i
+
+# target to preprocess a source file
+map_rotation.c.i:
+	$(MAKE) -f CMakeFiles/newfdf.dir/build.make CMakeFiles/newfdf.dir/map_rotation.c.i
+.PHONY : map_rotation.c.i
+
+map_rotation.s: map_rotation.c.s
+
+.PHONY : map_rotation.s
+
+# target to generate assembly for a file
+map_rotation.c.s:
+	$(MAKE) -f CMakeFiles/newfdf.dir/build.make CMakeFiles/newfdf.dir/map_rotation.c.s
+.PHONY : map_rotation.c.s
+
 put_pixel.o: put_pixel.c.o
 
 .PHONY : put_pixel.o
@@ -2957,6 +2984,33 @@ put_pixel.s: put_pixel.c.s
 put_pixel.c.s:
 	$(MAKE) -f CMakeFiles/newfdf.dir/build.make CMakeFiles/newfdf.dir/put_pixel.c.s
 .PHONY : put_pixel.c.s
+
+set_offset.o: set_offset.c.o
+
+.PHONY : set_offset.o
+
+# target to build an object file
+set_offset.c.o:
+	$(MAKE) -f CMakeFiles/newfdf.dir/build.make CMakeFiles/newfdf.dir/set_offset.c.o
+.PHONY : set_offset.c.o
+
+set_offset.i: set_offset.c.i
+
+.PHONY : set_offset.i
+
+# target to preprocess a source file
+set_offset.c.i:
+	$(MAKE) -f CMakeFiles/newfdf.dir/build.make CMakeFiles/newfdf.dir/set_offset.c.i
+.PHONY : set_offset.c.i
+
+set_offset.s: set_offset.c.s
+
+.PHONY : set_offset.s
+
+# target to generate assembly for a file
+set_offset.c.s:
+	$(MAKE) -f CMakeFiles/newfdf.dir/build.make CMakeFiles/newfdf.dir/set_offset.c.s
+.PHONY : set_offset.c.s
 
 # Help Target
 help:
@@ -3279,9 +3333,15 @@ help:
 	@echo "... manage_control_keys.o"
 	@echo "... manage_control_keys.i"
 	@echo "... manage_control_keys.s"
+	@echo "... map_rotation.o"
+	@echo "... map_rotation.i"
+	@echo "... map_rotation.s"
 	@echo "... put_pixel.o"
 	@echo "... put_pixel.i"
 	@echo "... put_pixel.s"
+	@echo "... set_offset.o"
+	@echo "... set_offset.i"
+	@echo "... set_offset.s"
 .PHONY : help
 
 

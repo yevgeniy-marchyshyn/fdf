@@ -112,5 +112,6 @@ add_executable(newfdf
         line_bresenham.c
         main.c
         manage_control_keys.c
+        map_rotation.c
         put_pixel.c
-        )
+        set_offset.c)

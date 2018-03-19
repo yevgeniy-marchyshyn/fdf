@@ -36,10 +36,4 @@ void			apply_multiplier(t_fdf *data)
 		}
 		y++;
 	}
-//	while (i < data->nx * data->ny)
-//	{
-//		data->map[i].x = data->map[i].x * (int)data->multiplier;
-//		data->map[i].y = data->map[i].y * (int)data->multiplier;
-//		i++;
-//	}
 }
