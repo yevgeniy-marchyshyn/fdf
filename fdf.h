@@ -100,6 +100,7 @@ typedef struct					s_fdf
 	int							angle_z;
 }								t_fdf;
 
+void				annulation_fdf(t_fdf *data);
 void				fdf_error(int errornumber);
 int					manage_control_keys(int key, t_fdf *data);
 void				draw_map(t_fdf *data);

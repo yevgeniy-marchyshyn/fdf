@@ -32,6 +32,7 @@ FDF = main.c\
 	  map_rotation.c\
 	  move_map.c\
 	  multiply_axis_z.c\
+	  annulation_fdf.c\
 
 OBJ = $(FDF: .c = .o)
 

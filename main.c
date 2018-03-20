@@ -48,14 +48,18 @@ static void 		get_coordinates(t_fdf *data, char *fat_line)
 	int i;
 
 	i = 0;
-	if (!(data->map = (t_coordinates**)malloc(sizeof(t_coordinates*) * (int)data->ny)))
+	if (!(data->map = (t_coordinates**)malloc(sizeof(t_coordinates*) *\
+	(int)data->ny)))
 		fdf_error(5);
-	if (!(data->map_origin = (t_coordinates**)malloc(sizeof(t_coordinates*) * (int)data->ny)))
+	if (!(data->map_origin = (t_coordinates**)malloc(sizeof(t_coordinates*) *\
+	(int)data->ny)))
 		fdf_error(5);
 	while (i < data->ny)
 	{
-		data->map[i] = (t_coordinates *)malloc(sizeof(t_coordinates) * (int)data->nx);
-		data->map_origin[i++] = (t_coordinates *)malloc(sizeof(t_coordinates) * (int)data->nx + 1);
+		data->map[i] = (t_coordinates *)malloc(sizeof(t_coordinates) *\
+		(int)data->nx);
+		data->map_origin[i++] = (t_coordinates *)malloc(sizeof(t_coordinates) *\
+		(int)data->nx + 1);
 	}
 	parse_z(data, fat_line);
 }
@@ -109,12 +113,7 @@ int					main(int argc, char **argv)
 	if (!(data.mlx_window = mlx_new_window(data.mlx_ptr,\
 					WINDOW_W, WINDOW_H, "Fils de fer (FDF)")))
 		fdf_error(3);
-	data.value_x = 0;
-	data.value_y = 0;
-	data.angle_x = 0;
-	data.angle_y = 0;
-	data.angle_z = 0;
-	data.color = COLOR_FACEBOOK;
+	annulation_fdf(&data);
 	parse_map(argv[1], &data);
 	apply_multiplier(&data);
 	set_offset(&data);
