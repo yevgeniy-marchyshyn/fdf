@@ -12,69 +12,6 @@
 
 #include "fdf.h"
 
-//static void			get_coordinates(t_fdf *data, char *fat_line)
-//{
-//	int 	i;
-//	double 	x;
-//	double 	y;
-//	int		n;
-//	char 	**z;
-//
-//	i = 0;
-//	x = 0;
-//	y = 0;
-//	n = (int)data->nx * (int)data->ny;
-//	if (!(z = ft_strsplit(fat_line, SPACE)))
-//		fdf_error(5);
-//	if (!(data->map = (t_coordinates*)malloc(sizeof(t_coordinates) * n)))
-//		fdf_error(5);
-//	if (!(data->map_origin = (t_coordinates*)malloc(sizeof(t_coordinates) * n)))
-//		fdf_error(5);
-//	while (i < n)
-//	{
-//		if (x == data->nx)
-//		{
-//			x = 0;
-//			y++;
-//		}
-//		data->map[i].x = x;
-//		data->map[i].y = y;
-//		data->map[i].z = ft_atoi(z[i]);
-//		data->map_origin[i].x = x++;
-//		data->map_origin[i].y = y;
-//		data->map_origin[i].z = ft_atoi(z[i]);
-//		i++;
-//	}
-//	ft_strdel(&fat_line);
-//}
-
-//static void		get_z_coord(t_fdf_data *data, char *line, t_fdf_point **map)
-//{
-//	size_t	i;
-//	size_t	j;
-//	char	**lines;
-//	char	**numbers;
-//
-//	i = 0;
-//	lines = ft_strsplit(line, '\n');
-//	while (i < data->max_y)
-//	{
-//		j = 0;
-//		numbers = ft_strsplit(lines[i], ' ');
-//		while (j < data->max_x)
-//		{
-//			map[i][j].y = (double)i - data->max_y / 2;
-//			map[i][j].x = (double)j - data->max_x / 2;
-//			if (numbers)
-//				map[i][j].z = (double)ft_atoi(numbers[j]);
-//			j++;
-//		}
-//		ft_free_tab((void **)numbers);
-//		i++;
-//	}
-//	ft_free_tab((void**)lines);
-//}
-
 static void			parse_z(t_fdf *data, char *fat_line)
 {
 	int			x;
@@ -172,10 +109,13 @@ int					main(int argc, char **argv)
 	if (!(data.mlx_window = mlx_new_window(data.mlx_ptr,\
 					WINDOW_W, WINDOW_H, "Fils de fer (FDF)")))
 		fdf_error(3);
-	parse_map(argv[1], &data);
+	data.value_x = 0;
+	data.value_y = 0;
 	data.angle_x = 0;
 	data.angle_y = 0;
 	data.angle_z = 0;
+	data.color = COLOR_FACEBOOK;
+	parse_map(argv[1], &data);
 	apply_multiplier(&data);
 	set_offset(&data);
 	draw_map(&data);

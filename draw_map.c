@@ -41,7 +41,6 @@ void				draw_map(t_fdf *data)
 	if (!(data->field = (int*)mlx_get_data_addr(data->mlx_img,\
 		&data->bits_per_pixel, &data->size_line, &data->endian)))
 		fdf_error(5);
-	data->color = COLOR_RED;
 	draw_grid(data);
 	mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->mlx_img, 0, 0);
 	mlx_destroy_image(data->mlx_ptr, data->mlx_img);

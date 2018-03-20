@@ -29,6 +29,7 @@ FDF = main.c\
 	  set_offset.c\
 	  line_bresenham.c\
 	  map_rotation.c\
+	  move_map.c\
 
 OBJ = $(FDF: .c = .o)
 

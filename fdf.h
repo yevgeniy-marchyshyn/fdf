@@ -31,12 +31,28 @@
 #define		COLOR_FACEBOOK		3889560	
 #define		COLOR_MARS			12665870
 
-#define		KEY_C				8
+
 #define		KEY_ESCAPE			53
 #define		ARROW_LEFT			123
 #define		ARROW_RIGHT			124
 #define		ARROW_UP			126
 #define		ARROW_DOWN			125
+#define		KEY_PAGE_UP			116
+#define		KEY_PAGE_DOWN		121
+#define		KEY_A				0
+#define		KEY_W				13
+#define		KEY_S				1
+#define		KEY_D				2
+
+#define		KEY_ONE				18
+#define		KEY_TWO				19
+#define		KEY_THREE			20
+#define		KEY_FOUR			21
+#define		KEY_FIVE			23
+#define		KEY_SIX				22
+#define		KEY_SEVEN			26
+#define		KEY_EIGHT			28
+#define		KEY_NINE			25
 
 #define		NEW_LINE			10
 #define		SPACE				32
@@ -64,9 +80,10 @@ typedef struct					s_fdf
 	void						*mlx_ptr;
 	void						*mlx_window;
 	void						*mlx_img;
+	struct s_coordinates		**map;
+	struct s_coordinates		**map_origin;
 	double 						ny;
 	double 						nx;
-	char 						**axis_x;
 	int 						*field;
 	int							bits_per_pixel;
 	int							size_line;
@@ -75,11 +92,11 @@ typedef struct					s_fdf
 	double						multiplier;
 	double						offset_x;
 	double						offset_y;
+	int 						value_x;
+	int 						value_y;
 	int							angle_x;
 	int							angle_y;
 	int							angle_z;
-	struct s_coordinates		**map;
-	struct s_coordinates		**map_origin;
 }								t_fdf;
 
 void				fdf_error(int errornumber);
@@ -91,5 +108,6 @@ void				line_bresenham(t_coordinates p0, t_coordinates p2, t_fdf *d);
 void				apply_multiplier(t_fdf *data);
 void				set_offset(t_fdf *data);
 void				map_rotation(t_fdf *data);
+void				move_map(t_fdf *data);
 
 #endif
