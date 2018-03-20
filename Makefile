@@ -27,9 +27,11 @@ FDF = main.c\
 	  put_pixel.c\
 	  apply_multiplier.c\
 	  set_offset.c\
+	  reset_offset.c\
 	  line_bresenham.c\
 	  map_rotation.c\
 	  move_map.c\
+	  multiply_axis_z.c\
 
 OBJ = $(FDF: .c = .o)
 

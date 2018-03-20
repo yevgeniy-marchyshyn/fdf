@@ -118,6 +118,7 @@ int					main(int argc, char **argv)
 	parse_map(argv[1], &data);
 	apply_multiplier(&data);
 	set_offset(&data);
+	multiply_axis_z(&data);
 	draw_map(&data);
 	mlx_hook(data.mlx_window, 2, 5, manage_control_keys, &data);
 	mlx_hook(data.mlx_window, 17, 1L<<17, click_x, &data);

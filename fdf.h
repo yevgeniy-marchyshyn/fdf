@@ -20,6 +20,7 @@
 #define		WINDOW_W			1024
 #define		WINDOW_H			768
 #define		SCALE				50
+#define		Z_COEFFICIENT		3
 
 #define		COLOR_BLUE			255
 #define		COLOR_GREEN			65280
@@ -107,7 +108,9 @@ void				put_pixel(double x, double y, t_fdf *data);
 void				line_bresenham(t_coordinates p0, t_coordinates p2, t_fdf *d);
 void				apply_multiplier(t_fdf *data);
 void				set_offset(t_fdf *data);
+void				reset_offset(t_fdf *data);
 void				map_rotation(t_fdf *data);
 void				move_map(t_fdf *data);
+void 				multiply_axis_z(t_fdf *data);
 
 #endif
