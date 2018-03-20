@@ -33,26 +33,6 @@ static void		reset_offset(t_fdf *data)
 	}
 }
 
-static void		centralize(t_fdf *data)
-{
-	int x;
-	int y;
-
-	y = 0;
-	ft_printf("x + %.2f, y +%.2f\n", (data->nx * data->multiplier) / 2,  (data->ny * data->multiplier) / 2);
-	while (y < data->ny)
-	{
-		x = 0;
-		while (x < data->nx)
-		{
-			data->map[y][x].x += (data->nx * data->multiplier) / 2;
-			data->map[y][x].y += (data->ny * data->multiplier) / 2;
-			x++;
-		}
-		y++;
-	}
-}
-
 int				manage_control_keys(int key, t_fdf *data)
 {
 	if (key == KEY_C)
@@ -75,7 +55,6 @@ int				manage_control_keys(int key, t_fdf *data)
 		exit (1);
 	}
 	reset_offset(data);
-//	centralize(data);
 	map_rotation(data);
 	set_offset(data);
 	draw_map(data);
