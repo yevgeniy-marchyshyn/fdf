@@ -32,7 +32,6 @@
 #define		COLOR_FACEBOOK		3889560	
 #define		COLOR_MARS			12665870
 
-
 #define		KEY_ESCAPE			53
 #define		ARROW_LEFT			123
 #define		ARROW_RIGHT			124
@@ -44,6 +43,8 @@
 #define		KEY_W				13
 #define		KEY_S				1
 #define		KEY_D				2
+#define		KEY_PLUS			24
+#define		KEY_MINUS			27
 
 #define		KEY_ONE				18
 #define		KEY_TWO				19
@@ -85,7 +86,7 @@ typedef struct					s_fdf
 	struct s_coordinates		**map_origin;
 	double 						ny;
 	double 						nx;
-	int 						*field;
+	int 						*field;						
 	int							bits_per_pixel;
 	int							size_line;
 	int							endian;
@@ -98,10 +99,14 @@ typedef struct					s_fdf
 	int							angle_x;
 	int							angle_y;
 	int							angle_z;
+	char						first_dive;
+	char						*fat_line;
+	char						*line;
+	char						**axis_x;
 }								t_fdf;
 
 void				annulation_fdf(t_fdf *data);
-void				fdf_error(int errornumber);
+void				fdf_error(int errornumber, t_fdf *data);
 int					manage_control_keys(int key, t_fdf *data);
 void				draw_map(t_fdf *data);
 int					click_x(t_fdf *data);
@@ -116,5 +121,8 @@ void 				multiply_axis_z(t_fdf *data);
 void				joiner(char **fat_line, char **line);
 void				annulation_pm(char **fat_line, char **line, t_fdf *data);
 void				write_z(t_fdf *data, int *x, int y, char **n);
+void				is_valid(int x, t_fdf *data);
+void				free_before_exit(t_fdf *data);
+void				z_plus(t_fdf *data, int	value);
 
 #endif

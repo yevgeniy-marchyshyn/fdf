@@ -37,10 +37,10 @@ void				draw_map(t_fdf *data)
 {
 	if (!(data->mlx_img = mlx_new_image(data->mlx_ptr,\
 	WINDOW_W, WINDOW_H)))
-		fdf_error(6);
+		fdf_error(6, data);
 	if (!(data->field = (int*)mlx_get_data_addr(data->mlx_img,\
 		&data->bits_per_pixel, &data->size_line, &data->endian)))
-		fdf_error(5);
+		fdf_error(5, data);
 	draw_grid(data);
 	mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->mlx_img, 0, 0);
 	mlx_destroy_image(data->mlx_ptr, data->mlx_img);

@@ -36,6 +36,9 @@ FDF = main.c\
 	  joiner.c\
 	  annulation_pm.c\
 	  write_z.c\
+	  is_valid.c\
+	  free_before_exit.c\
+	  z_plus.c\
 
 OBJ = $(FDF: .c = .o)
 

@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-static void			parse_z(t_fdf *data, char *fat_line)
+static void			parse_z(t_fdf *data)
 {
 	int			x;
 	int			y;
@@ -20,33 +20,33 @@ static void			parse_z(t_fdf *data, char *fat_line)
 	char 		**n;
 
 	y = 0;
-	if (!(l = ft_strsplit(fat_line, NEW_LINE)))
-		fdf_error(5);
+	if (!(l = ft_strsplit(data->fat_line, NEW_LINE)))
+		fdf_error(5, data);
 	while (y < data->ny)
 	{
 		x = 0;
 		if (!(n = ft_strsplit(l[y], SPACE)))
-			fdf_error(5);
+			fdf_error(5, data);
 		while (x < data->nx)
 			write_z(data, &x, y, n);
 		free(n);
 		y++;
 	}
 	free_words(l);
-	ft_strdel(&fat_line);
+	ft_strdel(&data->fat_line);
 }
 
-static void 		get_coordinates(t_fdf *data, char *fat_line)
+static void 		get_coordinates(t_fdf *data)
 {
 	int i;
 
 	i = 0;
 	if (!(data->map = (t_coordinates**)malloc(sizeof(t_coordinates*) *\
 	(int)data->ny)))
-		fdf_error(5);
+		fdf_error(5, data);
 	if (!(data->map_origin = (t_coordinates**)malloc(sizeof(t_coordinates*) *\
 	(int)data->ny)))
-		fdf_error(5);
+		fdf_error(5, data);
 	while (i < data->ny)
 	{
 		data->map[i] = (t_coordinates *)malloc(sizeof(t_coordinates) *\
@@ -54,36 +54,36 @@ static void 		get_coordinates(t_fdf *data, char *fat_line)
 		data->map_origin[i++] = (t_coordinates *)malloc(sizeof(t_coordinates) *\
 		(int)data->nx + 1);
 	}
-	parse_z(data, fat_line);
+	parse_z(data);
 }
 
 static void			parse_map(char *mapname, t_fdf *data)
 {
 	int 		fd;
-	char 		*fat_line;
-	char 		*line;
-	char 		**axis_x;
 	int 		x;
 
-	annulation_pm(&fat_line, &line, data);
+	data->nx = 0;
+	data->ny = 0;
 	if ((fd = open(mapname, O_RDONLY)) == -1)
-		fdf_error(4);
-	while (get_next_line(fd, &line) > 0)
+		fdf_error(4, data);
+	while (get_next_line(fd, &data->line) > 0)
 	{
 		x = 0;
 		data->ny++;
-		if (fat_line == NULL)
-			fat_line = ft_strdup(line);
+		if (data->fat_line == NULL)
+			data->fat_line = ft_strdup(data->line);
 		else
-			joiner(&fat_line, &line);
-		axis_x = ft_strsplit(line, SPACE);
-		while (axis_x[x])
+			joiner(&data->fat_line, &data->line);
+		data->axis_x = ft_strsplit(data->line, SPACE);
+		while (data->axis_x[x])
 			x++;
-		x > data->nx ? data->nx = x : 0;
-		free(axis_x);
-		ft_strdel(&line);
+		is_valid(x, data);
+		free(data->axis_x);
+		ft_strdel(&data->line);
 	}
-	get_coordinates(data, fat_line);
+	if (data->ny == 0 && data->nx == 0)
+		fdf_error(7, data);
+	get_coordinates(data);
 }
 
 int					main(int argc, char **argv)
@@ -91,12 +91,12 @@ int					main(int argc, char **argv)
 	t_fdf			data;
 
 	if (argc != 2)
-		fdf_error(1);
+		fdf_error(1, &data);
 	if (!(data.mlx_ptr = mlx_init()))
-		fdf_error(2);
+		fdf_error(2, &data);
 	if (!(data.mlx_window = mlx_new_window(data.mlx_ptr,\
 					WINDOW_W, WINDOW_H, "Fils de fer (FDF)")))
-		fdf_error(3);
+		fdf_error(3, &data);
 	annulation_fdf(&data);
 	parse_map(argv[1], &data);
 	apply_multiplier(&data);

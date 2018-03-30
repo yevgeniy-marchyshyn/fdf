@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-void		fdf_error(int errornumber)
+void		fdf_error(int errornumber, t_fdf *data)
 {
 	if (errornumber == 1)
 		write(2, "usage: ./fdf <mapfile.fdf>\n", 27);
@@ -26,5 +26,8 @@ void		fdf_error(int errornumber)
 		write(2, "Error: Oops, something went wrong\n", 34); 
 	else if (errornumber == 6)
 		write(2, "Error: Couldn't create a new image\n", 35);
+	else if (errornumber == 7)
+		write(2, "Error: Map is not valid\n", 24);
+	free_before_exit(data);
 	exit (1);
 }

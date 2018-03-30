@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   annulation_fdf.c                                   :+:      :+:    :+:   */
+/*   is_valid.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/20 20:00:00 by ymarchys          #+#    #+#             */
-/*   Updated: 2018/03/20 20:00:00 by ymarchys         ###   ########.fr       */
+/*   Created: 2018/03/30 12:30:59 by ymarchys          #+#    #+#             */
+/*   Updated: 2018/03/30 12:31:07 by ymarchys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void		annulation_fdf(t_fdf *data)
+void		is_valid(int x, t_fdf *data)
 {
-	data->map = NULL;
-	data->map_origin = NULL;
-	data->fat_line = NULL;
-	data->line = NULL;
-	data->axis_x = NULL;
-	data->color = COLOR_RED;
-	data->nx = 0;
-	data->ny = 0;
-	data->first_dive = 0;
-	data->value_x = 0;
-	data->value_y = 0;
-	data->angle_x = 320;
-	data->angle_y = -26;
-	data->angle_z = 10;
+	if (data->first_dive == 1 && x != data->nx)
+		fdf_error(7, data);
+	if (x > data->nx)
+	{
+		data->nx = x;
+		data->first_dive = 1;
+	}
 }

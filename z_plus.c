@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   annulation_fdf.c                                   :+:      :+:    :+:   */
+/*   z_plus.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/20 20:00:00 by ymarchys          #+#    #+#             */
-/*   Updated: 2018/03/20 20:00:00 by ymarchys         ###   ########.fr       */
+/*   Created: 2018/03/30 14:16:14 by ymarchys          #+#    #+#             */
+/*   Updated: 2018/03/30 14:16:19 by ymarchys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void		annulation_fdf(t_fdf *data)
+void		z_plus(t_fdf *data, int	value)
 {
-	data->map = NULL;
-	data->map_origin = NULL;
-	data->fat_line = NULL;
-	data->line = NULL;
-	data->axis_x = NULL;
-	data->color = COLOR_RED;
-	data->nx = 0;
-	data->ny = 0;
-	data->first_dive = 0;
-	data->value_x = 0;
-	data->value_y = 0;
-	data->angle_x = 320;
-	data->angle_y = -26;
-	data->angle_z = 10;
+	int x;
+	int y;
+
+	y = 0;
+	while (y != data->ny)
+	{
+		x = 0;
+		while (x != data->nx)
+		{
+			if (data->map[y][x].z != 0)
+				data->map[y][x].z += value;
+			if (data->map_origin[y][x].z != 0)
+				data->map_origin[y][x].z += value;
+			x++;
+		}
+		y++;
+	}
 }

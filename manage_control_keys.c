@@ -50,7 +50,7 @@ static void		rotation(int key, t_fdf *data)
 		data->angle_z -= 2;
 }
 
-static void		movement(int key, t_fdf *data)
+static void		movement_and_z_plus(int key, t_fdf *data)
 {
 	if (key == KEY_D)
 		data->value_x += 5;
@@ -60,6 +60,10 @@ static void		movement(int key, t_fdf *data)
 		data->value_y += 5;
 	if (key == KEY_W)
 		data->value_y -= 5;
+	if (key == KEY_PLUS)
+		z_plus(data, 2);
+	if (key == KEY_MINUS)
+		z_plus(data, -2);
 }
 
 int				manage_control_keys(int key, t_fdf *data)
@@ -70,7 +74,7 @@ int				manage_control_keys(int key, t_fdf *data)
 		exit (1);
 	}
 	rotation(key, data);
-	movement(key, data);
+	movement_and_z_plus(key, data);
 	set_color(key, data);
 	reset_offset(data);
 	map_rotation(data);
