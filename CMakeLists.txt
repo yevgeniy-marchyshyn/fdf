@@ -1,9 +1,12 @@
 cmake_minimum_required(VERSION 3.9)
-project(newfdf)
+project(fdf2)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -lmlx -framework OpenGL -framework AppKit")
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -lmlx -framework OpenGL -framework AppKit")
 
-add_executable(newfdf
+include_directories(inc libft minilibx_macos) # header directories
+link_directories(libft minilibx_macos) # library directories
+
+add_executable(fdf2
         libft/ft_printf/active_bits.c
         libft/ft_printf/annulation.c
         libft/ft_printf/check_flags_modif.c
@@ -103,15 +106,27 @@ add_executable(newfdf
         libft/get_next_line.c
         libft/get_next_line.h
         libft/libft.h
+        annulation_fdf.c
+        annulation_pm.c
         apply_multiplier.c
         click_x.c
         define_offset.c
         draw_map.c
         fdf.h
         fdf_error.c
+        free_before_exit.c
+        is_valid.c
+        joiner.c
         line_bresenham.c
         main.c
         manage_control_keys.c
         map_rotation.c
+        move_map.c
+        multiply_axis_z.c
         put_pixel.c
-        set_offset.c)
+        reset_offset.c
+        set_offset.c
+        write_z.c
+        z_plus.c)
+
+target_link_libraries(fdf2 -lft -lmlx  "-framework OpenGL" "-framework AppKit")

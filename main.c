@@ -62,8 +62,6 @@ static void			parse_map(char *mapname, t_fdf *data)
 	int 		fd;
 	int 		x;
 
-	data->nx = 0;
-	data->ny = 0;
 	if ((fd = open(mapname, O_RDONLY)) == -1)
 		fdf_error(4, data);
 	while (get_next_line(fd, &data->line) > 0)
@@ -81,7 +79,9 @@ static void			parse_map(char *mapname, t_fdf *data)
 		free(data->axis_x);
 		ft_strdel(&data->line);
 	}
-	if (data->ny == 0 && data->nx == 0)
+	printf("Max x: %.2f\n", data->nx);
+	printf("Max y: %.2f\n", data->ny);
+	if (data->nx == 0 && data->ny == 0)
 		fdf_error(7, data);
 	get_coordinates(data);
 }
@@ -90,6 +90,7 @@ int					main(int argc, char **argv)
 {
 	t_fdf			data;
 
+	annulation_fdf(&data);
 	if (argc != 2)
 		fdf_error(1, &data);
 	if (!(data.mlx_ptr = mlx_init()))
@@ -97,7 +98,6 @@ int					main(int argc, char **argv)
 	if (!(data.mlx_window = mlx_new_window(data.mlx_ptr,\
 					WINDOW_W, WINDOW_H, "Fils de fer (FDF)")))
 		fdf_error(3, &data);
-	annulation_fdf(&data);
 	parse_map(argv[1], &data);
 	apply_multiplier(&data);
 	multiply_axis_z(&data);
