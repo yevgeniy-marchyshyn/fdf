@@ -79,8 +79,6 @@ static void			parse_map(char *mapname, t_fdf *data)
 		free(data->axis_x);
 		ft_strdel(&data->line);
 	}
-	printf("Max x: %.2f\n", data->nx);
-	printf("Max y: %.2f\n", data->ny);
 	if (data->nx == 0 && data->ny == 0)
 		fdf_error(7, data);
 	get_coordinates(data);
