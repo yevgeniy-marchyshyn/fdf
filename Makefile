@@ -6,7 +6,7 @@
 #    By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/10 18:08:28 by ymarchys          #+#    #+#              #
-#    Updated: 2018/03/18 14:07:43 by ymarchys         ###   ########.fr        #
+#    Updated: 2018/03/30 01:05:16 by ymarchys         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,8 @@ FDF = main.c\
 	  move_map.c\
 	  multiply_axis_z.c\
 	  annulation_fdf.c\
+	  joiner.c\
+	  annulation_pm.c\
 
 OBJ = $(FDF: .c = .o)
 

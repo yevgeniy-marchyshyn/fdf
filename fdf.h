@@ -6,7 +6,7 @@
 /*   By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/09 15:25:00 by ymarchys          #+#    #+#             */
-/*   Updated: 2018/03/18 14:07:31 by ymarchys         ###   ########.fr       */
+/*   Updated: 2018/03/30 01:05:08 by ymarchys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,7 @@ void				reset_offset(t_fdf *data);
 void				map_rotation(t_fdf *data);
 void				move_map(t_fdf *data);
 void 				multiply_axis_z(t_fdf *data);
+void				joiner(char **fat_line, char **line);
+void				annulation_pm(char **fat_line, char **line, t_fdf *data);
 
 #endif

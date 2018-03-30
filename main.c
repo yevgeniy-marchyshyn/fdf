@@ -71,12 +71,8 @@ static void			parse_map(char *mapname, t_fdf *data)
 	char 		*line;
 	char 		**axis_x;
 	int 		x;
-	char 		*tmp;
 
-	line = NULL;
-	fat_line = NULL;
-	data->ny = 0;
-	data->nx = 0;
+	annulation_pm(&fat_line, &line, data);
 	if ((fd = open(mapname, O_RDONLY)) == -1)
 		fdf_error(4);
 	while (get_next_line(fd, &line) > 0)
@@ -86,16 +82,11 @@ static void			parse_map(char *mapname, t_fdf *data)
 		if (fat_line == NULL)
 			fat_line = ft_strdup(line);
 		else
-		{
-			tmp = ft_strjoin(fat_line, "\n");
-			fat_line = ft_strjoin(tmp, line);
-			ft_strdel(&tmp);
-		}
+			joiner(&fat_line, &line);
 		axis_x = ft_strsplit(line, SPACE);
 		while (axis_x[x])
 			x++;
-		if (x > data->nx)
-			data->nx = x;
+		x > data->nx ? data->nx = x : 0;
 		free(axis_x);
 		ft_strdel(&line);
 	}
