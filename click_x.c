@@ -6,7 +6,7 @@
 /*   By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 11:25:34 by ymarchys          #+#    #+#             */
-/*   Updated: 2018/03/13 11:29:28 by ymarchys         ###   ########.fr       */
+/*   Updated: 2018/03/30 18:55:14 by ymarchys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int		click_x(t_fdf *data)
 {
 	data = NULL;
-	exit (1);
+	exit(1);
 	return (0);
 }

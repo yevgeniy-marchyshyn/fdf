@@ -6,13 +6,13 @@
 /*   By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 14:16:14 by ymarchys          #+#    #+#             */
-/*   Updated: 2018/03/30 14:16:19 by ymarchys         ###   ########.fr       */
+/*   Updated: 2018/03/30 18:38:42 by ymarchys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void		z_plus(t_fdf *data, int	value)
+void		z_plus(t_fdf *data, int value)
 {
 	int x;
 	int y;

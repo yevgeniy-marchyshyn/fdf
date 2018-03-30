@@ -6,13 +6,13 @@
 /*   By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 19:40:00 by ymarchys          #+#    #+#             */
-/*   Updated: 2018/03/20 19:40:00 by ymarchys         ###   ########.fr       */
+/*   Updated: 2018/03/30 18:33:51 by ymarchys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void 		multiply_axis_z(t_fdf *data)
+void			multiply_axis_z(t_fdf *data)
 {
 	int x;
 	int y;

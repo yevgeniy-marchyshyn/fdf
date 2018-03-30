@@ -6,7 +6,7 @@
 /*   By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 15:51:47 by ymarchys          #+#    #+#             */
-/*   Updated: 2018/03/14 20:29:47 by ymarchys         ###   ########.fr       */
+/*   Updated: 2018/03/30 18:37:49 by ymarchys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static void			parse_z(t_fdf *data)
 {
 	int			x;
 	int			y;
-	char 		**l;
-	char 		**n;
+	char		**l;
+	char		**n;
 
 	y = 0;
 	if (!(l = ft_strsplit(data->fat_line, NEW_LINE)))
@@ -36,7 +36,7 @@ static void			parse_z(t_fdf *data)
 	ft_strdel(&data->fat_line);
 }
 
-static void 		get_coordinates(t_fdf *data)
+static void			get_coordinates(t_fdf *data)
 {
 	int i;
 
@@ -59,8 +59,8 @@ static void 		get_coordinates(t_fdf *data)
 
 static void			parse_map(char *mapname, t_fdf *data)
 {
-	int 		fd;
-	int 		x;
+	int			fd;
+	int			x;
 
 	if ((fd = open(mapname, O_RDONLY)) == -1)
 		fdf_error(4, data);

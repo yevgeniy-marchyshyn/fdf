@@ -6,7 +6,7 @@
 /*   By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:33:17 by ymarchys          #+#    #+#             */
-/*   Updated: 2018/03/14 20:13:19 by ymarchys         ###   ########.fr       */
+/*   Updated: 2018/03/30 18:54:49 by ymarchys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void			draw_grid(t_fdf *data)
 		while (x != data->nx)
 		{
 			if (x + 1 != data->nx)
-			line_bresenham(data->map[y][x], data->map[y][x + 1], data);
+				line_bresenham(data->map[y][x], data->map[y][x + 1], data);
 			if (y + 1 != data->ny)
 				line_bresenham(data->map[y][x], data->map[y + 1][x], data);
 			x++;
@@ -42,6 +42,7 @@ void				draw_map(t_fdf *data)
 		&data->bits_per_pixel, &data->size_line, &data->endian)))
 		fdf_error(5, data);
 	draw_grid(data);
-	mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->mlx_img, 0, 0);
+	mlx_put_image_to_window(data->mlx_ptr, data->mlx_window,\
+	data->mlx_img, 0, 0);
 	mlx_destroy_image(data->mlx_ptr, data->mlx_img);
 }

@@ -6,13 +6,13 @@
 /*   By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 13:43:12 by ymarchys          #+#    #+#             */
-/*   Updated: 2018/03/12 13:48:10 by ymarchys         ###   ########.fr       */
+/*   Updated: 2018/03/30 18:33:15 by ymarchys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static void 	set_color(int key, t_fdf *data)
+static void			set_color(int key, t_fdf *data)
 {
 	if (key == KEY_ONE)
 		data->color = COLOR_BLUE;
@@ -34,7 +34,7 @@ static void 	set_color(int key, t_fdf *data)
 		data->color = COLOR_RED;
 }
 
-static void		rotation(int key, t_fdf *data)
+static void			rotation(int key, t_fdf *data)
 {
 	if (key == ARROW_UP)
 		data->angle_x += 2;
@@ -50,7 +50,7 @@ static void		rotation(int key, t_fdf *data)
 		data->angle_z -= 2;
 }
 
-static void		movement_z_and_zoom(int key, t_fdf *data)
+static void			movement_z_and_zoom(int key, t_fdf *data)
 {
 	if (key == KEY_D)
 		data->value_x += 5;
@@ -64,18 +64,18 @@ static void		movement_z_and_zoom(int key, t_fdf *data)
 		z_plus(data, 2);
 	if (key == KEY_MINUS)
 		z_plus(data, -2);
-    if (key == KEY_OPENED_BRACKET)
-        zooming(data, 1, 1.03);
-    if (key == KEY_CLOSED_BRACKET)
-        zooming(data, 0, 1.03);
+	if (key == KEY_OPENED_BRACKET)
+		zooming(data, 1, 1.03);
+	if (key == KEY_CLOSED_BRACKET)
+		zooming(data, 0, 1.03);
 }
 
-int				manage_control_keys(int key, t_fdf *data)
+int					manage_control_keys(int key, t_fdf *data)
 {
 	if (key == KEY_ESCAPE)
 	{
 		mlx_destroy_window(data->mlx_ptr, data->mlx_window);
-		exit (1);
+		exit(1);
 	}
 	rotation(key, data);
 	reset_offset(data);

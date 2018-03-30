@@ -6,7 +6,7 @@
 /*   By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/18 17:11:00 by ymarchys          #+#    #+#             */
-/*   Updated: 2018/03/18 17:11:00 by ymarchys         ###   ########.fr       */
+/*   Updated: 2018/03/30 18:59:16 by ymarchys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void			define_offset(t_fdf *data)
 {
 	int		x;
-	int 	y;
+	int		y;
 
 	y = 0;
 	data->offset_x = (WINDOW_W / 2) - ((data->nx * data->multiplier) / 2);
