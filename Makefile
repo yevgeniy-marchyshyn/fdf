@@ -35,6 +35,7 @@ FDF = main.c\
 	  annulation_fdf.c\
 	  joiner.c\
 	  annulation_pm.c\
+	  write_z.c\
 
 OBJ = $(FDF: .c = .o)
 

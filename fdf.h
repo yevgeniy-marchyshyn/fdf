@@ -115,5 +115,6 @@ void				move_map(t_fdf *data);
 void 				multiply_axis_z(t_fdf *data);
 void				joiner(char **fat_line, char **line);
 void				annulation_pm(char **fat_line, char **line, t_fdf *data);
+void				write_z(t_fdf *data, int *x, int y, char **n);
 
 #endif

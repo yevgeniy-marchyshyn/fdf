@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   annulation_fdf.c                                   :+:      :+:    :+:   */
+/*   write_z.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/20 20:00:00 by ymarchys          #+#    #+#             */
-/*   Updated: 2018/03/20 20:00:00 by ymarchys         ###   ########.fr       */
+/*   Created: 2018/03/30 11:17:05 by ymarchys          #+#    #+#             */
+/*   Updated: 2018/03/30 11:17:09 by ymarchys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void		annulation_fdf(t_fdf *data)
+void		write_z(t_fdf *data, int *x, int y, char **n)
 {
-	data->map = NULL;
-	data->map_origin = NULL;
-	data->color = COLOR_RED;
-	data->value_x = 0;
-	data->value_y = 0;
-	data->angle_x = 30;
-	data->angle_y = 30;
-	data->angle_z = 10;
+	data->map[y][*x].y = (double)y - (data->ny / 2);
+	data->map[y][*x].x = (double)*x - (data->nx / 2);
+	data->map[y][*x].z = (double)ft_atoi(n[*x]);
+	data->map_origin[y][*x].y = (double)y - (data->ny / 2);
+	data->map_origin[y][*x].x = (double)*x - (data->nx / 2);
+	data->map_origin[y][*x].z = (double)ft_atoi(n[*x]);
+	(*x)++;
 }

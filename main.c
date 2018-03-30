@@ -28,19 +28,12 @@ static void			parse_z(t_fdf *data, char *fat_line)
 		if (!(n = ft_strsplit(l[y], SPACE)))
 			fdf_error(5);
 		while (x < data->nx)
-		{
-			data->map[y][x].y = (double)y - (data->ny / 2);
-			data->map[y][x].x = (double)x - (data->nx / 2);
-			data->map[y][x].z = (double)ft_atoi(n[x]);
-			data->map_origin[y][x].y = (double)y - (data->ny / 2);
-			data->map_origin[y][x].x = (double)x - (data->nx / 2);
-			data->map_origin[y][x].z = (double)ft_atoi(n[x]);
-			x++;
-		}
+			write_z(data, &x, y, n);
 		free(n);
 		y++;
 	}
 	free_words(l);
+	ft_strdel(&fat_line);
 }
 
 static void 		get_coordinates(t_fdf *data, char *fat_line)
@@ -107,11 +100,12 @@ int					main(int argc, char **argv)
 	annulation_fdf(&data);
 	parse_map(argv[1], &data);
 	apply_multiplier(&data);
-	set_offset(&data);
 	multiply_axis_z(&data);
+	map_rotation(&data);
+	set_offset(&data);
 	draw_map(&data);
 	mlx_hook(data.mlx_window, 2, 5, manage_control_keys, &data);
-	mlx_hook(data.mlx_window, 17, 1L<<17, click_x, &data);
+	mlx_hook(data.mlx_window, 17, 1L << 17, click_x, &data);
 	mlx_loop(data.mlx_ptr);
 	return (0);
 }
