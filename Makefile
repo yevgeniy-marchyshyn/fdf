@@ -12,12 +12,7 @@
 
 NAME = fdf
 
-# At home (XQuartz):
-#FLAGS = -Wall -Wextra -Werror -I /usr/X11/include -g -L /usr/X11/lib -lmlx \
-# -framework OpenGL -framework AppKit
-# at UNIT:
-# I turned off -Wall -Wextra -Werror
-FLAGS = -lmlx -framework OpenGL -framework AppKit
+FLAGS = -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit
 
 FDF = main.c\
 	  fdf_error.c\
@@ -34,11 +29,11 @@ FDF = main.c\
 	  multiply_axis_z.c\
 	  annulation_fdf.c\
 	  joiner.c\
-	  annulation_pm.c\
 	  write_z.c\
 	  is_valid.c\
 	  free_before_exit.c\
 	  z_plus.c\
+	  zooming.c\
 
 OBJ = $(FDF: .c = .o)
 
@@ -52,8 +47,6 @@ $(NAME): $(OBJ)
 
 clean:
 	@make -C ./libft/ clean
-#	At home during compilation was creating debug symbols file
-#	@rm -rf fdf.dSYM
 
 fclean: clean
 	@make -C ./libft/ fclean

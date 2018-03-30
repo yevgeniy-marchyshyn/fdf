@@ -127,6 +127,6 @@ add_executable(fdf2
         reset_offset.c
         set_offset.c
         write_z.c
-        z_plus.c)
+        z_plus.c zooming.c)
 
 target_link_libraries(fdf2 -lft -lmlx  "-framework OpenGL" "-framework AppKit")

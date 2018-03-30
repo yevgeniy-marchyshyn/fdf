@@ -105,5 +105,7 @@ int					main(int argc, char **argv)
 	mlx_hook(data.mlx_window, 2, 5, manage_control_keys, &data);
 	mlx_hook(data.mlx_window, 17, 1L << 17, click_x, &data);
 	mlx_loop(data.mlx_ptr);
+	if (data.field != NULL)
+		free(data.field);
 	return (0);
 }

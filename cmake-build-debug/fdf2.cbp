@@ -449,6 +449,9 @@
 		<Unit filename="/Users/ymarchys/Documents/fdf2/z_plus.c">
 			<Option target="fdf2"/>
 		</Unit>
+		<Unit filename="/Users/ymarchys/Documents/fdf2/zooming.c">
+			<Option target="fdf2"/>
+		</Unit>
 		<Unit filename="/Users/ymarchys/Documents/fdf2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

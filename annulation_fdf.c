@@ -19,6 +19,7 @@ void		annulation_fdf(t_fdf *data)
 	data->fat_line = NULL;
 	data->line = NULL;
 	data->axis_x = NULL;
+	data->field = NULL;
 	data->color = COLOR_RED;
 	data->nx = 0;
 	data->ny = 0;

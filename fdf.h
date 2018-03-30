@@ -45,6 +45,8 @@
 #define		KEY_D				2
 #define		KEY_PLUS			24
 #define		KEY_MINUS			27
+#define		KEY_OPENED_BRACKET	33
+#define		KEY_CLOSED_BRACKET	30
 
 #define		KEY_ONE				18
 #define		KEY_TWO				19
@@ -119,10 +121,10 @@ void				map_rotation(t_fdf *data);
 void				move_map(t_fdf *data);
 void 				multiply_axis_z(t_fdf *data);
 void				joiner(char **fat_line, char **line);
-void				annulation_pm(char **fat_line, char **line, t_fdf *data);
 void				write_z(t_fdf *data, int *x, int y, char **n);
 void				is_valid(int x, t_fdf *data);
 void				free_before_exit(t_fdf *data);
 void				z_plus(t_fdf *data, int	value);
+void				zooming(t_fdf *data, int flag, double value);
 
 #endif

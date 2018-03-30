@@ -116,6 +116,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fdf2.dir/set_offset.c.o"
   "CMakeFiles/fdf2.dir/write_z.c.o"
   "CMakeFiles/fdf2.dir/z_plus.c.o"
+  "CMakeFiles/fdf2.dir/zooming.c.o"
   "fdf2.pdb"
   "fdf2"
 )

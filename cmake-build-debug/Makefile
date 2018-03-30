@@ -3282,6 +3282,33 @@ z_plus.c.s:
 	$(MAKE) -f CMakeFiles/fdf2.dir/build.make CMakeFiles/fdf2.dir/z_plus.c.s
 .PHONY : z_plus.c.s
 
+zooming.o: zooming.c.o
+
+.PHONY : zooming.o
+
+# target to build an object file
+zooming.c.o:
+	$(MAKE) -f CMakeFiles/fdf2.dir/build.make CMakeFiles/fdf2.dir/zooming.c.o
+.PHONY : zooming.c.o
+
+zooming.i: zooming.c.i
+
+.PHONY : zooming.i
+
+# target to preprocess a source file
+zooming.c.i:
+	$(MAKE) -f CMakeFiles/fdf2.dir/build.make CMakeFiles/fdf2.dir/zooming.c.i
+.PHONY : zooming.c.i
+
+zooming.s: zooming.c.s
+
+.PHONY : zooming.s
+
+# target to generate assembly for a file
+zooming.c.s:
+	$(MAKE) -f CMakeFiles/fdf2.dir/build.make CMakeFiles/fdf2.dir/zooming.c.s
+.PHONY : zooming.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -3642,6 +3669,9 @@ help:
 	@echo "... z_plus.o"
 	@echo "... z_plus.i"
 	@echo "... z_plus.s"
+	@echo "... zooming.o"
+	@echo "... zooming.i"
+	@echo "... zooming.s"
 .PHONY : help
 
 

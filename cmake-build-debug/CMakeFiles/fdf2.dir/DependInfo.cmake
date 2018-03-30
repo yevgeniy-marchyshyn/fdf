@@ -121,6 +121,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/ymarchys/Documents/fdf2/set_offset.c" "/Users/ymarchys/Documents/fdf2/cmake-build-debug/CMakeFiles/fdf2.dir/set_offset.c.o"
   "/Users/ymarchys/Documents/fdf2/write_z.c" "/Users/ymarchys/Documents/fdf2/cmake-build-debug/CMakeFiles/fdf2.dir/write_z.c.o"
   "/Users/ymarchys/Documents/fdf2/z_plus.c" "/Users/ymarchys/Documents/fdf2/cmake-build-debug/CMakeFiles/fdf2.dir/z_plus.c.o"
+  "/Users/ymarchys/Documents/fdf2/zooming.c" "/Users/ymarchys/Documents/fdf2/cmake-build-debug/CMakeFiles/fdf2.dir/zooming.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

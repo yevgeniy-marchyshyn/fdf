@@ -50,7 +50,7 @@ static void		rotation(int key, t_fdf *data)
 		data->angle_z -= 2;
 }
 
-static void		movement_and_z_plus(int key, t_fdf *data)
+static void		movement_z_and_zoom(int key, t_fdf *data)
 {
 	if (key == KEY_D)
 		data->value_x += 5;
@@ -64,6 +64,10 @@ static void		movement_and_z_plus(int key, t_fdf *data)
 		z_plus(data, 2);
 	if (key == KEY_MINUS)
 		z_plus(data, -2);
+    if (key == KEY_OPENED_BRACKET)
+        zooming(data, 1, 1.03);
+    if (key == KEY_CLOSED_BRACKET)
+        zooming(data, 0, 1.03);
 }
 
 int				manage_control_keys(int key, t_fdf *data)
@@ -74,9 +78,9 @@ int				manage_control_keys(int key, t_fdf *data)
 		exit (1);
 	}
 	rotation(key, data);
-	movement_and_z_plus(key, data);
-	set_color(key, data);
 	reset_offset(data);
+	movement_z_and_zoom(key, data);
+	set_color(key, data);
 	map_rotation(data);
 	set_offset(data);
 	move_map(data);
