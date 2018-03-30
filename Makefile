@@ -6,13 +6,13 @@
 #    By: ymarchys <ymarchys@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/10 18:08:28 by ymarchys          #+#    #+#              #
-#    Updated: 2018/03/30 01:05:16 by ymarchys         ###   ########.fr        #
+#    Updated: 2018/03/30 18:20:27 by ymarchys         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
 
-FLAGS = -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit
+FLAGS = -lmlx -framework OpenGL -framework AppKit
 
 FDF = main.c\
 	  fdf_error.c\
